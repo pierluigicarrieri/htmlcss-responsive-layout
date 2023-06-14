@@ -1,7 +1,9 @@
 /* Variables */
 
 :root {
-    --padding-col: 0.5rem 0;
+    --padding-col-element: 0.5rem 0;
+    --border-radius-1: 15px;
+    --border-radius-2: 40px;
     --gap-1: 20px;
     --color-1: #9792E4;
     --color-2: #3084FD;
@@ -49,6 +51,14 @@ h5 {
     font-size: 16px;
 }
 
+h4 {
+    font-size: 18px;
+}
+
+h3 {
+    font-size: 22px;
+}
+
 footer {
     background-color: #000000;
 
@@ -74,8 +84,37 @@ footer {
 
 .btn {
     all: unset;
-    padding: 0.3rem 0.5rem;
     border-radius: 20px;
+}
+
+.btn-round {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-small {
+    padding: 0.3rem 0.5rem;
+}
+
+.btn-medium {
+    padding: 0.3rem 1.5rem;
+}
+
+.btn-white {
+    background-color: var(--color-4);
+}
+
+.btn-blue {
+    color: var(--color-4);
+    background-color: var(--color-2);
+}
+
+.btn-purple {
+    background-color: var(--color-1);
 }
 
 .row {
@@ -83,16 +122,25 @@ footer {
     display: flex;
     flex-wrap: wrap;
     flex-basis: 0;
+    gap: var(--gap-1);
 
     border: 1px solid greenyellow;
 }
 
 .col {
-    width: 100%;
+    flex-basis: 100%;
     flex-grow: 1;
     padding: 1rem 1rem;
 
     border: 1px dashed red;
+}
+
+.col-radius-1 {
+    border-radius: var(--border-radius-1);
+}
+
+.col-radius-2 {
+    border-radius: var(--border-radius-2);
 }
 
 /* Main css */
@@ -115,10 +163,6 @@ ul > li {
 ul > li > a {
     text-decoration: none;
     color: var(--color-4);
-}
-
-header .btn {
-    background-color: var(--color-4);
 }
 
 /* Hamburger menu mechanism */
@@ -150,12 +194,12 @@ section:first-child .col:first-child {
     padding-bottom: 0;
 }
 
-.col > i, .col > p, .col > h5, .col > .btn-container {
-    padding: var(--padding-col);
+.col > i, .col > p, .col h4, .col > h5, 
+.col > .btn-container {
+    padding: var(--padding-col-element);
 }
 
 section:first-child .col {
-    border-radius: 15px;
     text-align: center;
     background-color: var(--color-3);
 }
@@ -163,12 +207,6 @@ section:first-child .col {
 section:first-child h5,
 section:first-child .col > i {
     color: var(--color-2);
-}
-
-section:first-child .btn {
-    padding: 0.3rem 1.5rem;
-    color: var(--color-4);
-    background-color: var(--color-2);
 }
 
 #phone {
@@ -183,9 +221,56 @@ section:first-child .col > i {
 
 /* Second section */
 
+section:nth-child(2) .col:first-child {
+    color: var(--color-4);
+}
+
+section:nth-child(2) .col:last-child {
+    background-color: var(--color-4);
+    text-align: center;
+}
+
 section:nth-child(2) img {
     max-height: 200px;
 }
+
+/* Third section */
+
+section:nth-child(3) > .container > div:first-child,
+section:nth-child(3) > .container > h3,
+section:nth-child(3) > .container > p {
+    text-align: center;
+    padding: var(--padding-col-element)
+}
+
+section:nth-child(3) h3 {
+    color: var(--color-1);
+}
+
+section:nth-child(3) .col {
+    text-align: center;
+    color: var(--color-4);
+    background-color: var(--color-1);
+}
+
+section:nth-child(3) img {
+    max-height: 150px;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+section:nth-child(3) i {
+    font-size: 16px;
+}
+
+/* Fourth section */
+
+
+
+
+
+
 
 
 
@@ -198,13 +283,15 @@ section:nth-child(2) img {
         width: 100%;
     }
 
+    /* Change in column layout */
+
     .row {
         gap: var(--gap-1);
     }
 
     section:first-child .col:first-child {
         flex-grow: 1;
-    }
+        }
 
     /* How to calculate width of gapped items (math formula):
      https://stackoverflow.com/questions/68007483/css-flexbox-gap-gap-value-affecting-width-calculation */
@@ -221,7 +308,22 @@ section:nth-child(2) img {
         flex-basis:calc((100% / 2) - var(--gap-1) + var(--gap-1) / 2);
     }
 
+    /* Third section */
+
+    section:nth-child(3) .col {
+        display: flex;
+    }
+
+    .section-3-text-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
 }
+
+
+
 
 @media screen and (min-width: 920px) {
 
@@ -229,8 +331,16 @@ section:nth-child(2) img {
         width: 100%;
         max-width: 1080px;
     }
+
+    .container-1 {
+        padding: 0 15%;
+    }
+
+    .container-2 {
+        padding: 0 20%;
+    }
     
-/* Header */
+/* Header, hamburger menu gone, nav menu appears */
 
     #hamburger-menu {
         display: none;
@@ -247,6 +357,8 @@ section:nth-child(2) img {
 
 /* Main */
 
+/* Change in column layout */
+
     .col-1-2-desktop {
         flex-basis: calc((100% / 2) - var(--gap-1) + var(--gap-1) / 2);
     }
@@ -259,23 +371,27 @@ section:nth-child(2) img {
         flex-basis: calc((100% / 3 * 2)- var(--gap-1) + var(--gap-1) / 3 * 2);
     }
 
-    section:first-child .col:first-child {
+/* Next 3 selectors to modify behaviour of top left column - 
+first section */
+
+    .col-2-3-tablet {
         display: flex;
     }
 
-    section:first-child .col:first-child 
-    .col:first-child {
+    .col-2-3-tablet .col:first-child {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
     }
 
-    section:first-child .col:first-child 
-    .col:first-child h5,
-    section:first-child .col:first-child 
-    .col:first-child p,
-    section:first-child .col:first-child 
-    .col:first-child .button-container {
+    .col-2-3-tablet > .col:first-child h5,
+    .col-2-3-tablet > .col:first-child p,
+    .col-2-3-tablet > .col:first-child .button-container {
         flex-basis: 100%;
     }
+
+    section:nth-child(2) .col:last-child {
+        margin-top: 150px;
+    }
+
 }
