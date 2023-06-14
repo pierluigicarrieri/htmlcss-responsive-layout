@@ -69,9 +69,10 @@ h1 {
 }
 
 footer {
+    padding: 2rem 0;
+    text-align: center;
+    color: var(--color-4);
     background-color: #000000;
-
-    height: 400px;
 }
 
 /* Utility classes */
@@ -79,10 +80,8 @@ footer {
 .container {
     width: 100%;
     min-width: 480px;
-    padding: 0 1rem;
+    padding: 0 2rem;
     margin: auto;
-
-    border: 1px solid black;
 }
 
 .btn-container {
@@ -356,6 +355,17 @@ section:last-child .btn {
 section:last-child i {
     font-size: 5px;
     vertical-align: middle;
+}
+
+/* Footer */
+
+footer p,
+footer div {
+    padding: 2rem 0;
+}
+
+footer a {
+    color: var(--color-1);
 }
 
 
