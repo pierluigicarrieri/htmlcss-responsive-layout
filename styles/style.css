@@ -63,6 +63,11 @@ h2 {
     font-size: 30px;
 }
 
+h1 {
+    font-size: 40px;
+    color: #FDC25F;
+}
+
 footer {
     background-color: #000000;
 
@@ -292,14 +297,72 @@ section:nth-child(4) h5 {
 }
 
 section:nth-child(4) .btn-container {
-    width: 20%;
+    justify-content: flex-start;
 }
 
 /* Fifth section */
 
-section:nth-child(5) h2 {
+section:nth-child(5) h2,
+section:nth-child(5) h4 {
+    color: var(--color-1);
+    padding: var(--padding-col-element);
+}
+
+section:nth-child(5) img {
+    max-height: 150px;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+section:nth-child(5) .btn-container {
+    justify-content: flex-start;
+}
+
+.section-5-img-container {
+    position: relative;
+}
+
+section:nth-child(5) i {
+    font-size: 45px;
+    color: var(--color-1);
+    position: absolute;
+    top: 0;
+    left: 110px;
+}
+
+/* Sixth section */
+
+section:last-child {
+    text-align: center;
+    color: var(--color-4);
+}
+
+section:last-child h1,
+section:last-child h4,
+section:last-child p,
+section:last-child > .container > div {
+    padding: var(--padding-col-element);
+}
+
+section:last-child a {
+    color: var(--color-4);
+}
+
+section:last-child .btn {
     color: var(--color-1);
 }
+
+section:last-child i {
+    font-size: 5px;
+    vertical-align: middle;
+}
+
+
+
+
+
+
 
 
 
@@ -370,6 +433,10 @@ section:nth-child(5) h2 {
     .container-2 {
         padding: 0 20%;
     }
+
+    .container-3 {
+        padding: 0 30%;
+    }
     
 /* Header, hamburger menu gone, nav menu appears */
 
@@ -424,5 +491,10 @@ first section */
     section:nth-child(2) .col:last-child {
         margin-top: 150px;
     }
+
+    section:nth-child(5) .col:first-child {
+        display: block;
+    }
+
 
 }
