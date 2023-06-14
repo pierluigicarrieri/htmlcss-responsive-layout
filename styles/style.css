@@ -59,6 +59,10 @@ h3 {
     font-size: 22px;
 }
 
+h2 {
+    font-size: 30px;
+}
+
 footer {
     background-color: #000000;
 
@@ -113,7 +117,12 @@ footer {
     background-color: var(--color-2);
 }
 
-.btn-purple {
+.btn-purple-black {
+    background-color: var(--color-1);
+}
+
+.btn-purple-white {
+    color: var(--color-4);
     background-color: var(--color-1);
 }
 
@@ -266,7 +275,23 @@ section:nth-child(3) i {
 
 /* Fourth section */
 
+section:nth-child(4) h3 {
+    text-align: center;
+    color: var(--color-4);
+    padding-bottom: 1.5rem;
+}
 
+section:nth-child(4) .col {
+    background-color: var(--color-4);
+}
+
+section:nth-child(4) h2,
+section:nth-child(4) h5 {
+    padding: var(--padding-col-element);
+    color: var(--color-1);
+}
+
+/* Fifth section */
 
 
 
